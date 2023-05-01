@@ -27,7 +27,7 @@ public class AccountsRepository
             INSERT INTO accounts
               (name, picture, email, id)
             VALUES
-              (@Name, @Picture, @Email, @Id)";
+              (@Name, @Picture, @Email, @Id);";
     _db.Execute(sql, newAccount);
     return newAccount;
   }
