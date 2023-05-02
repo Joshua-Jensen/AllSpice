@@ -9,9 +9,10 @@ public class IngredientsService
     _repo = repo;
   }
 
-  internal void destroyIng(int ingredientId)
+  internal int destroyIng(int ingredientId)
   {
-    _repo.destroyIng(ingredientId);
+    int rowsAffected = _repo.destroyIng(ingredientId);
+    return rowsAffected;
   }
 
   internal List<Ingredient> GetAllIngredients(int recipeId)

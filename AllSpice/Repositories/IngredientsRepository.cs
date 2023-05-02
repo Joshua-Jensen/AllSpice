@@ -9,9 +9,13 @@ public class IngredientsRepository
     _db = db;
   }
 
-  internal void destroyIng(int ingredientId)
+  internal int destroyIng(int ingredientId)
   {
-    throw new NotImplementedException();
+    string sql = @"
+  DELETE FROM ingredients WHERE id = @ingredientId
+  ;";
+    int rowsAffected = _db.Execute(sql, new { ingredientId });
+    return rowsAffected;
   }
 
   internal List<Ingredient> GetALLIngredients(int recipeId)
